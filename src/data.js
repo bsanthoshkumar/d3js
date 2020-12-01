@@ -16,7 +16,7 @@ module.exports = [
   {
     name: 'Andhra Pradesh',
     active: 12615,
-    confirmed: 865705, 
+    confirmed: 865705,
     recovered: 846120,
     deceased: 6970,
   },
