@@ -1,6 +1,7 @@
 const Dropdown = (props) => {
   return (
     <select
+     className="drop-down"
       name="states"
       onChange={(e) => props.onClick(e.target.value)}
       defaultValue={props.stateIndex}

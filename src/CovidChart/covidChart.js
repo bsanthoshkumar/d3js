@@ -1,5 +1,4 @@
-import { useEffect, useRef } from 'react';
-import drawChart from "./DrawChart"
+import { useEffect } from "react";
 
 const CovidChart = (props) => {
   const data = [];
@@ -8,19 +7,28 @@ const CovidChart = (props) => {
     let pair = { key: key, value: props.data[key] };
     data.push(pair);
   }
-  const chart = useRef(null);
-  const colorPallete={
-    'active': 'orange',
-    'confirmed': 'blue',
-    'recovered':'red',
-    'deceased': 'green'
+  const colorPallete = {
+    active: "orange",
+    confirmed: "blue",
+    recovered: "red",
+    deceased: "green",
+  };
+  const dimensions={
+    height: 500,
+    width: 400
   }
-
+  //props.drawChart()
   useEffect(() => {
-    drawChart(chart.current, data.filter((d) => d.key !== 'name'),colorPallete);
-  });
+    props.drawChart(
+      "#chart",
+      data.filter((d) => d.key !== "name"),
+      colorPallete,
+      dimensions
+    );
+    console.log("enter useEffect")
+  },[data]);
 
-  return <div ref={chart} id="chart" />;
+  return <div id="chart" />;
 };
 
 export default CovidChart;

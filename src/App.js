@@ -1,16 +1,15 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import CovidChart from './CovidChart/covidChart';
-import * as data from './CovidChart/data';
-import Dropdown from './CovidChart/Dropdown';
+import { useEffect, useState } from "react";
+import "./App.css";
+import CovidChart from "./CovidChart/covidChart";
+import * as data from "./CovidChart/data";
+import drawChart from "./CovidChart/DrawChart";
+import Dropdown from "./CovidChart/Dropdown";
 
 const App = () => {
   const [stateIndex, updateIndex] = useState(2);
 
-  const drawChart = (stateData) => <CovidChart data={stateData}></CovidChart>;
-
   useEffect(() => {
-    drawChart(data[stateIndex]);
+    <CovidChart data={data[stateIndex]}></CovidChart>;
   }, [stateIndex]);
 
   return (
@@ -20,7 +19,7 @@ const App = () => {
         onClick={updateIndex}
         statesList={data.map((d) => d.name)}
       ></Dropdown>
-      {drawChart(data[stateIndex])}
+      <CovidChart data={data[stateIndex]} drawChart={drawChart}></CovidChart>;
     </div>
   );
 };
