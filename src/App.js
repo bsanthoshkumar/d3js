@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import CovidChart from './covidChart';
-import * as data from './data';
-import Dropdown from './Dropdown';
+import CovidChart from './CovidChart/covidChart';
+import * as data from './CovidChart/data';
+import Dropdown from './CovidChart/Dropdown';
 
 const App = () => {
   const [stateIndex, updateIndex] = useState(2);
