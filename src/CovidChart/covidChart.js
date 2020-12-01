@@ -17,7 +17,7 @@ const CovidChart = (props) => {
     height: 500,
     width: 400
   }
-  //props.drawChart()
+
   useEffect(() => {
     props.drawChart(
       "#chart",

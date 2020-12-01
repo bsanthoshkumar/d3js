@@ -15,8 +15,4 @@ describe('covidChart',()=>{
   it('renders properly',()=>{
        expect(wrapper.find('#chart').length).toEqual(1)
   })
-
-//   it('calls drawChartFunction',()=>{
-//       expect(testDrawChart).toHaveBeenCallled()
-//   })
 })
